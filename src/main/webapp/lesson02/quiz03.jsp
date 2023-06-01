@@ -14,9 +14,10 @@
 <body>
 	<form method="get" action="/lesson02/quiz03_1.jsp">
 		<h1>체격 조건 입력</h1>
-		<div class="display-flex">
-		<input type="text" class="form-control col-3" name="height" placeholder="키를 입력하세요"> cm 	<input type="text" class="form-control col-3" name="weight" placeholder="몸무게를 입력하세요"> kg 
-		<input type="submit" class="btn btn-primary" value="계산">
+		<div class="d-flex align-items-end">
+		<input type="text" class="form-control col-3" name="height" placeholder="키를 입력하세요"> cm 	
+		<input type="text" class="form-control col-3 ml-3" name="weight" placeholder="몸무게를 입력하세요"> kg 
+		<input type="submit" class="btn btn-primary ml-3" value="계산">
 		</div>
 	</form>
 </body>
