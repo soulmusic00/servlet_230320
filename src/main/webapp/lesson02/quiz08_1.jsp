@@ -9,6 +9,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
 <%
@@ -57,10 +62,37 @@
 	};
 	list.add(map);
 	%>
+	
+<%
+
+	//태그에 보열줄 책 정보 하나 뽑아내기
+	int id = Integer.valueOf(request.getParameter("id"));
+	Map<String, Object> target = new HashMap<>();
+	for(Map<String, Object> item : list) {
+		if((int)item.get("id") == id) {
+			target = item;
+			break;
+		}	
+	}
+%>
+
+
+	<div class="container">
+		<div class="d-flex">
+			<img src="<%= target.get("image") %>" alt="표지" width="300">
+		</div>
+		<div>
+			<span class="display-1 font-weight-bold d-block"><%=target.get("title") %></span>	
+			<span class="display-3 text-info"><%=target.get("author") %></span>	
+			<div class="display-4 text-secondary"><%=target.get("publisher") %></div>
+		</div>
+	</div>
+	
 
 
 
-	<%
+
+	<%-- <%
 	
 		String title = request.getParameter("title");
 	
@@ -87,7 +119,7 @@
 				%>	
 					
 				
-		</div>
+		</div> --%>
 	
 	
 
