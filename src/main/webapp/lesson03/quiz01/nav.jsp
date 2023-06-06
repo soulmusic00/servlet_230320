@@ -44,12 +44,20 @@
 
 
 
+ 		<%-- <%
+ 			for(int i = 0; i < list.size(); i++) {
+ 				
+ 				Map<String, String> newMap = list.get(i);
+ 		%>
 
+ --%>
 
 		
 <ul class = "nav nav-fill w-100">
 
-	<li class="nav-item"><a href="#" class="nav-link">전체</a></li>
+	
+	<%-- <li class="nav-item"><a href="content.jsp?category=<%=newMap.get("category") %>" class="nav-link">전체</a></li> --%>
+	<li class="nav-item"><a href="content.jsp?category=전체" class="nav-link">전체</a></li>
 	<li class="nav-item"><a href="#" class="nav-link">지상파</a></li>
 	<li class="nav-item"><a href="#" class="nav-link">드라마</a></li>
 	<li class="nav-item"><a href="#" class="nav-link">예능</a></li>
@@ -58,4 +66,9 @@
 	
 </ul>
 
+	<%-- <%
+ 			}
+	
+	%>
+ --%>
 
