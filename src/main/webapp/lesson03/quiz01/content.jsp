@@ -52,16 +52,17 @@ list.add(map);
 		</thead>
 		<tbody>
 			<%
+			
+				String category = request.getParameter("category"); //null(전체) 또는 카테고리
+			
+			
 					for(Map<String, String> item: list) {		
-			
-			
-			/* 
-						for(int i = 0; i < list.size(); i++) {
-							Map<String, String> newMap = list.get(i);
+						//카테고리가 null일 때 (전체) 또는 카테고리명이 일치할 때
+					
+						if(category == null || category.equals(item.get("category"))) {
 						
-							 */
-							
-							
+						
+		
 					
 					%>
 
@@ -72,8 +73,8 @@ list.add(map);
 				<td class="col-3"><%=item.get("category") %></td>
 			</tr>
 			<%
-					
-						}
+						}				
+					}
 					%>
 
 
